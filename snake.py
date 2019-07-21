@@ -11,12 +11,17 @@ move=0
 sb=[]
 ld=[]
 print('\n')
-print("\t\t\tWELCOME TO THE ROLL DICE GAME !!!\n")
+
+print("\t\t\tWelcome To The Dice Roll Game !!!\n")
 name=input("\t\t\tplease set your name as player: ")
+print('\t\t\tfor exit() press 11, enjoy. . \n')
 d=Dices()
-while 1:
+while 1 or 11:
 	list=[input('\t\t\tPRESS 1 FOR THROW DICE: ')]
-	if list[0]=='1':
+	if list[0]=='11':
+		print(f'\n \t\t\tplay next time {name}, have great time :) <3 ')
+		sys.exit()
+	elif list[0]=='1':
 		move= random.randrange(1,7)
 		if move==1:
 			d.one()
@@ -56,7 +61,8 @@ while 1:
 			print(f'{ld} /^^^^^^/ {p_point}')
 			ld[0]==0
 	elif list[0]!='1':
-		print('WRONG DIAL !!!')
+		print('WRONG DIAL !!!') 
+
 print(f'\t\t\tcongratulation {name} you win the game ☺☻ !!!')
 print('*'*100)
 
